@@ -17,7 +17,7 @@ const Login = ({ setUser }) => {
     try {
       const response = await loginUser(credentials);
       if (response.data.success) {
-        const userData = { userId: response.data.userId, role: response.data.role };
+        const userData = { userId: response.data.userId, role: response.data.role,fullname: response.data.fullName, };
         localStorage.setItem('user', JSON.stringify(userData));
         setUser(userData);
         // Redirect based on role

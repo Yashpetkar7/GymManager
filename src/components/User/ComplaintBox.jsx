@@ -9,6 +9,7 @@ const ComplaintBox = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await createUserRequest({
+      userName:user.fullname,
       userId: user.userId,
       type: 'complaint',
       details: { message },

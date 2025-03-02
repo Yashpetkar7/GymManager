@@ -56,13 +56,15 @@ const TrainingAssistance = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: typeof value === 'string' ? value.split(',') : value }));
   };
-
+  const user = JSON.parse(localStorage.getItem('user'));
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const payload = {
         type: 'trainingAssistance',
         details: {
+         userName:user.fullname,
+          userId: user.userId,
           assistanceType: formData.assistanceType,
           trainingGoals: formData.trainingGoals,
           preferredTrainer: formData.preferredTrainer,

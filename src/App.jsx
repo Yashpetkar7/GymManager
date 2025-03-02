@@ -8,6 +8,9 @@ import UserLandingPage from './components/User/UserLandingPage';
 import UserProfile from './components/User/UserProfile';
 import ComplaintBox from './components/User/ComplaintBox';
 import TrainingAssistance from './components/User/TrainingAssistance';
+import MealBooking from './components/User/MealBooking';
+import TrainingRequestsList from './components/Admin/Trainingrequest';
+import AdminComplaints from './components/Admin/Complintslist';
 // import other necessary components
 
 function App() {
@@ -33,6 +36,10 @@ function App() {
           {user && user.role === 'admin' && (
             <>
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
+              <Route path="/admin/trainingRequests" element={<TrainingRequestsList />} />
+              <Route path="/admin/complaintlists" element={<AdminComplaints />} />
+
+
               {/* other admin routes */}
             </>
           )}
@@ -43,6 +50,7 @@ function App() {
               <Route path="/user/profile" element={<UserProfile />} />
               <Route path="/user/complaint" element={<ComplaintBox />} />
               <Route path="/user/assistance" element={<TrainingAssistance />} />
+              <Route path="/user/mealbooking" element={<MealBooking />} />
               {/* other user routes */}
             </>
           )}

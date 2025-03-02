@@ -17,6 +17,9 @@ const Navbar = ({ user, onLogout }) => {
                 <Button color="inherit" component={Link} to="/admin/dashboard">
                   Dashboard
                 </Button>
+                <Button color="inherit" component={Link} to="/admin/complaintlists">
+                  List of Complaints
+                </Button>
               </>
             )}
             {user.role === 'user' && (
@@ -33,7 +36,7 @@ const Navbar = ({ user, onLogout }) => {
                 <Button color="inherit" component={Link} to="/user/assistance">
                   Training Assistance
                 </Button>
-                <Button color="inherit" component={Link} to="/user/meal">
+                <Button color="inherit" component={Link} to="/user/mealbooking">
                   Meal Booking
                 </Button>
               </>

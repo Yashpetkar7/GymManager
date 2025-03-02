@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+export const baseURL='http://localhost:5000'
 const API = axios.create({
   baseURL: 'http://localhost:5000',
 });
@@ -15,7 +16,8 @@ export const getAllUsers = () => API.get('/api/admin/users');
 export const createUser = (userData) => API.post('/api/admin/users', userData);
 export const updateUser = (userId, updatedData) => API.put(`/api/admin/users/${userId}`, updatedData);
 export const deleteUser = (userId) => API.delete(`/api/admin/users/${userId}`);
-
+export const createMealOrder = (data) => API.post('/api/user/meals/orders', data);
+export const getAllRequests = () => API.get('/api/admin/requests');
 // User APIs
 export const getUserProfile = (userId) => API.get('/api/user/profile', { params: { userId } });
 export const createUserRequest = (requestData) => API.post('/api/user/requests', requestData);
